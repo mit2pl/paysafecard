@@ -16,8 +16,11 @@
     },
     "autoload": {
         "psr-4": {
-            "Mit2\\Paysafecard\\": "src"
+            "Mit2\\Paysafecard\\": "src/"
         }
+    },
+    "config": {
+        "sort-packages": true
     },
     "extra": {
         "laravel": {
