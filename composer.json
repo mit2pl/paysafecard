@@ -1,0 +1,29 @@
+{
+    "name": "mit2/paysafecard",
+    "description": "Paysafecard package for laravel ^8",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mit2",
+            "email": "mit2pl@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.3|^8.0",
+        "laravel/framework": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mit2\\Paysafecard\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mit2\\Paysafecard\\Providers\\PaysafecardProvider"
+            ]
+        }
+    }
+}
