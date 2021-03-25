@@ -1,6 +1,6 @@
 {
     "name": "mit2/paysafecard",
-    "description": "Paysafecard package for laravel ^8",
+    "description": "Paysafecard package for laravel 8",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -23,10 +23,7 @@
         "laravel": {
             "providers": [
                 "Mit2\\Paysafecard\\Providers\\PaysafecardProvider"
-            ],
-            "aliases": {
-                "Paysafecard": "Mit2\\Paysafecard\\Facades\\Paysafecard"
-              }
+            ]
         }
     }
 }
