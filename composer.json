@@ -23,7 +23,10 @@
         "laravel": {
             "providers": [
                 "Mit2\\Paysafecard\\Providers\\PaysafecardProvider"
-            ]
+            ],
+            "aliases": {
+                "Paysafecard": "Mit2\\Paysafecard\\Facades\\Paysafecard"
+              }
         }
     }
 }
