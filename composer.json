@@ -3,6 +3,7 @@
     "description": "Paysafecard package for laravel ^8",
     "type": "library",
     "license": "MIT",
+    "version": "1.0",
     "authors": [
         {
             "name": "mit2",
