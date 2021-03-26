@@ -25,7 +25,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Mit2\\Paysafecard\\Providers\\PaysafecardProvider"
+                "Mit2\\Paysafecard\\PaysafecardProvider"
             ]
         }
     }
