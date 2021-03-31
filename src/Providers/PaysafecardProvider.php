@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Mit2\Paysafecard\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
