@@ -11,12 +11,11 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.3|^8.0",
-        "laravel/framework": "^8.0"
+        "php": "^7.3|^8.0"
     },
     "autoload": {
         "psr-4": {
-            "Mit2\\Paysafecard\\": "src/"
+            "Mit2\\Paysafecard\\": "src"
         }
     },
     "config": {
@@ -25,7 +24,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Mit2\\Paysafecard\\PaysafecardProvider"
+                "Mit2\\Paysafecard\\Providers\\PaysafecardProvider"
             ]
         }
     }
