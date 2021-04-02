@@ -15,7 +15,7 @@ return [
     /*
         Your Paysafecard key
     */
-    'psc_key'   => end("PSC_KEY", ''),
+    'psc_key'   => env("PSC_KEY", ''),
     /*
         Your currency 
     */
