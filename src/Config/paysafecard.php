@@ -15,11 +15,7 @@ return [
     /*
         Your Paysafecard key
     */
-    'psc_key'   => end("PSC_KEY", ''),
-    /*
-        Your currency 
-    */
-    'psc_currency' => env('CURRENCY', 'pln'),
+    'psc_key'   => env("PSC_KEY", ''),
     /*
         You can enable error logs:
         1 - Enable
