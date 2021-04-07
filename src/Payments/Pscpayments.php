@@ -14,7 +14,8 @@ Class PscpaymentClass {
         }else if(Config::get('paysafecard.psc_mode') == 'test') {
             return "https://apitest.paysafecard.com/v1/payments/";
         }else {
-            Log::debug('An informational message.');
+            Log::debug('You chose wrong Psc mode');
+            abort(404);
         }
     }
 }
