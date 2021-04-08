@@ -5,7 +5,10 @@
 
 */
 namespace Mit2\Paysafecard\Payments;
-Class PscpaymentClass {
+
+use Illuminate\Support\Facades\Log;
+
+Class Payment {
 
     public function getlink() {
         //in this function we get link to website
@@ -17,5 +20,9 @@ Class PscpaymentClass {
             Log::debug('You chose wrong Psc mode');
             abort(404);
         }
+    }
+
+    public function create(Request $request) {
+
     }
 }

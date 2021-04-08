@@ -23,10 +23,6 @@ return [
     */
     'psc_logs'     => env('PSC_LOGGED', '1'),
     /*
-        Location of your logs file
-    */
-    'psc_log_location' => storage_path() . '/logs/psc.log',
-    /*
         Debuging your code
         0 - disable, ou don't see errors (on live mode please turn of to users don't see errors)
         1 - enable, you see all errors
