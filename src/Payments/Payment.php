@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Log;
 
 Class Payment {
 
+    private $currencychoes = array('CHF', 'CZK', 'DKK', 'EUR', 'RON', 'GBP', 'NOK', 'PLN', 'SEK', 'USD');
+
     public function getlink() {
         //in this function we get link to website
         if(config('paysafecard.psc_mode') == 'live') {
@@ -24,8 +26,8 @@ Class Payment {
         }
     }
 
+    //create payment
     public function create(array $createvalue) {
-        // print_r($createvalue['amount']);
         if($this->currency($createvalue['currency']) === true)
         {
             if($this->amount($createvalue['amount']) === true) {
@@ -38,11 +40,16 @@ Class Payment {
         }
        // return $cos[currency];
     }
+
+    //get curl information
+    private function getcurl() {
+        $startcurl = curl_init();
+    }
     
     //check if currency is ok
     public function currency($valuecurrency) {
         //accept currency CHF, CZK, DKK, EUR, RON, GBP, NOK, PLN, SEK, and USD
-        if($valuecurrency == 'CHF' OR $valuecurrency == 'CZK' OR $valuecurrency == 'DKK' OR $valuecurrency == 'EUR' OR $valuecurrency == 'RON' OR $valuecurrency == 'GBP' OR $valuecurrency == 'NOK' OR $valuecurrency == 'PLN' OR $valuecurrency == 'SEK' OR $valuecurrency == 'USD') {
+        if(in_array($valuecurrency, $this->currencychoes)) {
             return true;
         }else {
             if(Config('paysafecard.psc_logs') == '1') {
