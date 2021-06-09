@@ -7,7 +7,7 @@
 namespace Mit2\Paysafecard\Payments;
 
 use Illuminate\Support\Facades\Log;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request as Getrequest;
 
 Class Payment {
 
@@ -28,7 +28,8 @@ Class Payment {
     }
 
     //create payment
-    public function create(Request $getrequest, array $createvalue) {
+    public function create(array $createvalue) {
+        $getrequest = new Getrequest;
         if($this->currency($createvalue['currency']) === true)
         {
             if($this->amount($createvalue['amount']) === true) {
@@ -80,7 +81,12 @@ Class Payment {
                     $head = [];
                 }
 
-                $this->getcurl("afd", "POST", $head);
+                $this->getcurl($fullinformation, "POST", $head);
+                if($this->checkrequiest() == true) {
+                    return $this->response;
+                } else {
+                    return "jednak nie pyklo";
+                }
             }else {
                 abort(404);
             }
@@ -177,6 +183,16 @@ Class Payment {
             if(Config('paysafecard.psc_logs') == '1') {
                 Log::debug('You choose wrond key level, must be SIMPLE or FULL');
             }
+            return false;
+        }
+    }
+
+    //check if request have error 
+    public function checkrequiest() {
+        if(($this->curl['error_nr'] == 0) && ($this->curl["http_status"] < 300)) 
+        {
+            return true;
+        } else {
             return false;
         }
     }
