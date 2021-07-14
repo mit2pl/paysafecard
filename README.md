@@ -3,22 +3,27 @@ To install package:
 
 ```php
 composer require mit2/paysafecard
+
+php artisan vendor:publish --provider "Mit2\PaysafecardProviders\PaysafecardProvider"
+
 ```
 
 To create payment
 
 ```php
+use Mit2\Paysafecard\Payments\Payment;
 
-$cos = new Payment;
-       $cos->create([
-            'amount' => '10.1',
+$payment = new Payment;
+       $payment->create([
+            'amount' => '10',
             'currency' => 'PLN',
-            'success_url' => 'http://plemiona.com/tak',
-            'failed_url' => 'http://plemiona.com/nie',
-            'notification_url' => 'http://plemiona.com/czekamy',
-            // 'kyclevel' => '',
+            'success_url' => route('payment.success'),
+            'failed_url' => route('payment.failed'),
+            'notification_url' => route('payment.notificationurl'),
             'customer_mail' => Auth::user()->email,
            ]);
 return redirect($cos->request['request_url']);
 
 ```
+
+
