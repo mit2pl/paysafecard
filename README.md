@@ -6,7 +6,7 @@ composer require mit2/paysafecard
 
 php artisan vendor:publish --provider "Mit2\PaysafecardProviders\PaysafecardProvider"
 
-```
+```env
 add to env file
 ```
 # choose test or live mode
